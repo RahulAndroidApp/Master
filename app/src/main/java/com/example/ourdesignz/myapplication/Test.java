@@ -233,12 +233,19 @@ public class Test extends Activity
      *     which is either PERMISSION_GRANTED or PERMISSION_DENIED. Never null.
      */
 
-
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        EasyPermissions.onRequestPermissionsResult(
+                requestCode, permissions, grantResults, this);
+    }
 
 /**
      * Callback for when a permission is granted using the EasyPermissions
      * library.
-     * @param requestCode The request code associated with the requested
+     * @param requestCode The request code associated with the requestedgit
      *         permission
      * @param list The requested permission list. Never null.
      */
