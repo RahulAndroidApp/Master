@@ -1,4 +1,3 @@
-/*
 package com.example.ourdesignz.myapplication;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -65,11 +64,10 @@ public class Test extends Activity
     private static final String[] SCOPES = { DriveScopes.DRIVE_METADATA_READONLY,
             GmailScopes.GMAIL_READONLY};
 
-    */
 /**
      * Create the main activity.
-     * @param savedInstanceState previously saved instance data.
-     *//*
+     * @param savedInstanceState previously saved instance data.*/
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,14 +119,13 @@ public class Test extends Activity
 
 
 
-    */
 /**
      * Attempt to call the API, after verifying that all the preconditions are
      * satisfied. The preconditions are: Google Play Services installed, an
      * account was selected and the device currently has online access. If any
      * of the preconditions are not satisfied, the app will prompt the user as
-     * appropriate.
-     *//*
+     * appropriate.*/
+
 
     private void getResultsFromApi() {
         if (! isGooglePlayServicesAvailable()) {
@@ -142,7 +139,6 @@ public class Test extends Activity
         }
     }
 
-    */
 /**
      * Attempts to set the account used with the API credentials. If an account
      * name was previously saved it will use that one; otherwise an account
@@ -151,8 +147,8 @@ public class Test extends Activity
      * GET_ACCOUNTS permission, which is requested here if it is not already
      * present. The AfterPermissionGranted annotation indicates that this
      * function will be rerun automatically whenever the GET_ACCOUNTS permission
-     * is granted.
-     *//*
+     * is granted.*/
+
 
     @AfterPermissionGranted(REQUEST_PERMISSION_GET_ACCOUNTS)
     private void chooseAccount() {
@@ -179,7 +175,6 @@ public class Test extends Activity
         }
     }
 
-    */
 /**
      * Called when an activity launched here (specifically, AccountPicker
      * and authorization) exits, giving you the requestCode you started it with,
@@ -188,8 +183,8 @@ public class Test extends Activity
      * @param resultCode code indicating the result of the incoming
      *     activity result.
      * @param data Intent (containing result data) returned by incoming
-     *     activity result.
-     *//*
+     *     activity result.*/
+
 
     @Override
     protected void onActivityResult(
@@ -229,7 +224,6 @@ public class Test extends Activity
         }
     }
 
-    */
 /**
      * Respond to requests for permissions at runtime for API 23 and above.
      * @param requestCode The request code passed in
@@ -237,7 +231,7 @@ public class Test extends Activity
      * @param permissions The requested permissions. Never null.
      * @param grantResults The grant results for the corresponding permissions
      *     which is either PERMISSION_GRANTED or PERMISSION_DENIED. Never null.
-     *//*
+     */
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
@@ -248,39 +242,36 @@ public class Test extends Activity
                 requestCode, permissions, grantResults, this);
     }
 
-    */
 /**
      * Callback for when a permission is granted using the EasyPermissions
      * library.
-     * @param requestCode The request code associated with the requested
+     * @param requestCode The request code associated with the requestedgit
      *         permission
      * @param list The requested permission list. Never null.
-     *//*
+     */
 
     @Override
     public void onPermissionsGranted(int requestCode, List<String> list) {
         // Do nothing.
     }
 
-    */
 /**
      * Callback for when a permission is denied using the EasyPermissions
      * library.
      * @param requestCode The request code associated with the requested
      *         permission
      * @param list The requested permission list. Never null.
-     *//*
+     */
 
     @Override
     public void onPermissionsDenied(int requestCode, List<String> list) {
         // Do nothing.
     }
 
-    */
 /**
      * Checks whether the device currently has a network connection.
-     * @return true if the device has a network connection, false otherwise.
-     *//*
+     * @return true if the device has a network connection, false otherwise.*/
+
 
     private boolean isDeviceOnline() {
         ConnectivityManager connMgr =
@@ -289,12 +280,11 @@ public class Test extends Activity
         return (networkInfo != null && networkInfo.isConnected());
     }
 
-    */
 /**
      * Check that Google Play services APK is installed and up to date.
      * @return true if Google Play Services is available and up to
      *     date on this device; false otherwise.
-     *//*
+     */
 
     private boolean isGooglePlayServicesAvailable() {
         GoogleApiAvailability apiAvailability =
@@ -304,11 +294,10 @@ public class Test extends Activity
         return connectionStatusCode == ConnectionResult.SUCCESS;
     }
 
-    */
 /**
      * Attempt to resolve a missing, out-of-date, invalid or disabled Google
-     * Play Services installation via a user dialog, if possible.
-     *//*
+     * Play Services installation via a user dialog, if possible.*/
+
 
     private void acquireGooglePlayServices() {
         GoogleApiAvailability apiAvailability =
@@ -321,13 +310,12 @@ public class Test extends Activity
     }
 
 
-    */
 /**
      * Display an error dialog showing that Google Play Services is missing
      * or out of date.
      * @param connectionStatusCode code describing the presence (or lack of)
      *     Google Play Services on this device.
-     *//*
+     */
 
     void showGooglePlayServicesAvailabilityErrorDialog(
             final int connectionStatusCode) {
@@ -339,11 +327,10 @@ public class Test extends Activity
         dialog.show();
     }
 
-    */
 /**
      * An asynchronous task that handles the Drive API call.
-     * Placing the API calls in their own task ensures the UI stays responsive.
-     *//*
+     * Placing the API calls in their own task ensures the UI stays responsive.*/
+
 
     private class MakeRequestTask extends AsyncTask<Void, Void, List<String>> {
         private com.google.api.services.drive.Drive mService = null;
@@ -358,11 +345,10 @@ public class Test extends Activity
                     .build();
         }
 
-        */
 /**
          * Background task to call Drive API.
-         * @param params no parameters needed for this task.
-         *//*
+         * @param params no parameters needed for this task.*/
+
 
         @Override
         protected List<String> doInBackground(Void... params) {
@@ -375,13 +361,12 @@ public class Test extends Activity
             }
         }
 
-        */
 /**
          * Fetch a list of up to 10 file names and IDs.
          * @return List of Strings describing files, or an empty list if no files
          *         found.
          * @throws IOException
-         *//*
+         */
 
         private List<String> getDataFromApi() throws IOException {
             // Get a list of up to 10 files.
@@ -448,4 +433,4 @@ public class Test extends Activity
             }
         }
     }
-}*/
+}
