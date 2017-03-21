@@ -17,13 +17,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       // getBrowserHist();
+        getBrowserHist();
 
 
     }
 
 
-   /* public void getBrowserHist() {
+    public void getBrowserHist() {
         String[] proj = new String[] { Browser.BookmarkColumns.TITLE, Browser.BookmarkColumns.URL };
         String sel = Browser.BookmarkColumns.BOOKMARK + " = 0"; // 0 = history, 1 = bookmark
         Cursor mCur = getContentResolver().query(Browser.BOOKMARKS_URI, proj, sel, null, null);
@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
                 mCur.moveToNext();
             }
         }
-    }*/
+    }
 
 
 }
